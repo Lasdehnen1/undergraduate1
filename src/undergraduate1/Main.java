@@ -34,6 +34,8 @@ public class Main {
         findSalaryMoreThanParameter();
 
 
+
+
     }
 
         public static void printAllList() {

@@ -3,7 +3,7 @@ package undergraduate1;
 public class Employee {
 
 
-    private String fullName;
+    private final String fullName;
     private int department;
     private double salary;
     private static int counter = 1;
@@ -48,6 +48,10 @@ public class Employee {
 
     public String toString2() {
         return "ID: " + id + "; Ф.И.О.: " + fullName  + "; Зарплата: " + salary;
+    }
+
+    public String toString3() {
+        return "Ф.И.О.: " + fullName + "; Отдел: " + department;
     }
 
 
