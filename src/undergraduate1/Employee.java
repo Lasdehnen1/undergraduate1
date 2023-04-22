@@ -1,13 +1,18 @@
 package undergraduate1;
 
+import java.util.Objects;
+
 public class Employee {
 
 
-    private final String fullName;
+    private String fullName;
     private int department;
     private double salary;
+
+
+
     private static int counter = 1;
-    private final int id;
+    private int id;
 
     public Employee(String fullName, int department, double salary) {
         this.fullName = fullName;
@@ -46,19 +51,21 @@ public class Employee {
         return "ID: " + id + "; Ф.И.О.: " + fullName + "; Отдел: " + department + "; Зарплата: " + salary;
     }
 
-    public String toString2() {
-        return "ID: " + id + "; Ф.И.О.: " + fullName  + "; Зарплата: " + salary;
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee1 = (Employee) o;
+        return department == employee1.department && Double.compare(employee1.salary, salary) == 0 && id == employee1.id && Objects.equals(fullName, employee1.fullName);
     }
 
-    public String toString3() {
-        return "Ф.И.О.: " + fullName + "; Отдел: " + department;
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, department, salary, id);
     }
-
-
-
-
-
-
 
 }
 
